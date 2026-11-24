@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="Nav_Projects" xml:space="preserve"><value>Projeler</value></data>
+  <data name="Nav_Experience" xml:space="preserve"><value>Deneyim</value></data>
+  <data name="Nav_Skills" xml:space="preserve"><value>Yetenekler</value></data>
+  <data name="Nav_About" xml:space="preserve"><value>Hakkımda</value></data>
+  <data name="Nav_Contact" xml:space="preserve"><value>İletişim</value></data>
+  <data name="Section_FeaturedProjects" xml:space="preserve"><value>Öne Çıkan Projeler</value></data>
+  <data name="Section_Education" xml:space="preserve"><value>Eğitimlerim</value></data>
+  <data name="Section_Contact" xml:space="preserve"><value>İletişim Bilgilerim</value></data>
+  <data name="Common_ComingSoon" xml:space="preserve"><value>Yakında...</value></data>
+</root>

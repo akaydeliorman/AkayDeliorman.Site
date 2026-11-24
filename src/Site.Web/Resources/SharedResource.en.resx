@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="Nav_Projects" xml:space="preserve"><value>Projects</value></data>
+  <data name="Nav_Experience" xml:space="preserve"><value>Experience</value></data>
+  <data name="Nav_Skills" xml:space="preserve"><value>Skills</value></data>
+  <data name="Nav_About" xml:space="preserve"><value>About</value></data>
+  <data name="Nav_Contact" xml:space="preserve"><value>Contact</value></data>
+  <data name="Section_FeaturedProjects" xml:space="preserve"><value>Featured Projects</value></data>
+  <data name="Section_Education" xml:space="preserve"><value>Education</value></data>
+  <data name="Section_Contact" xml:space="preserve"><value>Get in Touch</value></data>
+  <data name="Common_ComingSoon" xml:space="preserve"><value>Coming soon...</value></data>
+</root>

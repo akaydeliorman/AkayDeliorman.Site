@@ -1,4 +1,6 @@
 ﻿@page "/"
+@page "/en"
+@inject IStringLocalizer<SharedResource> L
 
 <PageTitle>Akay Deliorman | .NET Backend Developer</PageTitle>
 
@@ -8,26 +10,26 @@
 </section>
 
 <section id="projects">
-    <h2>Öne Çıkan Projeler</h2>
-    <p>Yakında...</p>
+    <h2>@L["Section_FeaturedProjects"]</h2>
+    <p>@L["Common_ComingSoon"]</p>
 </section>
 
 <section id="experience">
-    <h2>Deneyim</h2>
-    <p>Yakında...</p>
+    <h2>@L["Nav_Experience"]</h2>
+    <p>@L["Common_ComingSoon"]</p>
 </section>
 
 <section id="skills">
-    <h2>Yetenekler</h2>
-    <p>Yakında...</p>
+    <h2>@L["Nav_Skills"]</h2>
+    <p>@L["Common_ComingSoon"]</p>
 </section>
 
 <section id="education">
-    <h2>Eğitimlerim</h2>
-    <p>Yakında...</p>
+    <h2>@L["Section_Education"]</h2>
+    <p>@L["Common_ComingSoon"]</p>
 </section>
 
 <section id="contact">
-    <h2>İletişim Bilgilerim</h2>
-    <p>Yakında...</p>
+    <h2>@L["Section_Contact"]</h2>
+    <p>@L["Common_ComingSoon"]</p>
 </section>
