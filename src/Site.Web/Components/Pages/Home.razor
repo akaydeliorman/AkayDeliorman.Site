@@ -31,5 +31,10 @@
 
 <section id="contact">
     <h2>@L["Section_Contact"]</h2>
-    <p>@L["Common_ComingSoon"]</p>
+    <ul>
+        @foreach (var link in SiteContent.ContactLinks)
+        {
+            <li><a href="@link.Url">@link.Label.Text()</a></li>
+        }
+    </ul>
 </section>
