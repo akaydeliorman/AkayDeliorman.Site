@@ -9,4 +9,7 @@
   <data name="Section_Education" xml:space="preserve"><value>Education</value></data>
   <data name="Section_Contact" xml:space="preserve"><value>Get in Touch</value></data>
   <data name="Common_ComingSoon" xml:space="preserve"><value>Coming soon...</value></data>
+  <data name="Section_Certificates" xml:space="preserve"><value>Certificates and Training</value></data>
+  <data name="Education_Gpa" xml:space="preserve"><value>GPA</value></data>
+  <data name="Common_InProgress" xml:space="preserve"><value>ongoing</value></data>
 </root>

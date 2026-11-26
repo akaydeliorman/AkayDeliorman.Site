@@ -9,4 +9,7 @@
   <data name="Section_Education" xml:space="preserve"><value>Eğitimlerim</value></data>
   <data name="Section_Contact" xml:space="preserve"><value>İletişim Bilgilerim</value></data>
   <data name="Common_ComingSoon" xml:space="preserve"><value>Yakında...</value></data>
+  <data name="Section_Certificates" xml:space="preserve"><value>Sertifikalar ve Eğitimler</value></data>
+  <data name="Education_Gpa" xml:space="preserve"><value>Not Ortalaması</value></data>
+  <data name="Common_InProgress" xml:space="preserve"><value>devam ediyor</value></data>
 </root>

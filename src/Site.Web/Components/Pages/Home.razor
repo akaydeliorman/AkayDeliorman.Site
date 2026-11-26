@@ -26,7 +26,36 @@
 
 <section id="education">
     <h2>@L["Section_Education"]</h2>
-    <p>@L["Common_ComingSoon"]</p>
+    <ul>
+        @foreach (var education in SiteContent.Educations)
+        {
+            <li>
+                <strong>@education.Degree.Text()</strong> – @education.School.Text() · @education.StartYear – @education.EndYear
+                @if (education.Gpa is not null)
+                {
+                    <span> · @L["Education_Gpa"]: @education.Gpa</span>
+                }
+            </li>
+        }
+    </ul>
+
+    <h3>@L["Section_Certificates"]</h3>
+    <ul>
+        @foreach (var certificate in SiteContent.Certificates)
+        {
+            <li>
+                <strong>@certificate.Name.Text()</strong> – @certificate.Issuer.Text() · @certificate.Year
+                @if (certificate.InProgress)
+                {
+                    <span> (@L["Common_InProgress"])</span>
+                }
+                @if (certificate.Details is not null)
+                {
+                    <p>@certificate.Details.Text()</p>
+                }
+            </li>
+        }
+    </ul>
 </section>
 
 <section id="contact">
