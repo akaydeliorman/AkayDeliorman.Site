@@ -1,0 +1,33 @@
+@inject IStringLocalizer<SharedResource> L
+
+<article id="@Project.Slug">
+    <h3>@Project.Title.Text()</h3>
+    <p>@Project.Context.Text() · @Project.Year</p>
+    <p>@Project.Summary.Text()</p>
+    <p>@string.Join(", ", Project.Technologies)</p>
+
+    @if (ShowHighlights)
+    {
+        <ul>
+            @foreach (var highlight in Project.Highlights)
+            {
+                <li>@highlight.Text()</li>
+            }
+        </ul>
+    }
+
+    @if (Project.RepoUrl is not null)
+    {
+        <a href="@Project.RepoUrl" target="_blank" rel="noopener">@L["Project_ViewOnGitHub"]</a>
+    }
+</article>
+
+@code {
+    // Kartı kullanan sayfa hangi projeyi göstereceğini buradan verir: <ProjectCard Project="project" />
+    [Parameter, EditorRequired]
+    public Project Project { get; set; } = default!;
+
+    // true verilirse maddeler (Highlights) de gösterilir. /projeler sayfası true verir, ana sayfa vermez.
+    [Parameter]
+    public bool ShowHighlights { get; set; }
+}

@@ -12,4 +12,10 @@
   <data name="Section_Certificates" xml:space="preserve"><value>Sertifikalar ve Eğitimler</value></data>
   <data name="Education_Gpa" xml:space="preserve"><value>Not Ortalaması</value></data>
   <data name="Common_InProgress" xml:space="preserve"><value>devam ediyor</value></data>
+  <data name="Common_Present" xml:space="preserve"><value>Halen</value></data>
+  <data name="Common_AllProjects" xml:space="preserve"><value>Tüm projeler →</value></data>
+  <data name="Project_ViewOnGitHub" xml:space="preserve"><value>GitHub'da incele</value></data>
+  <data name="About_Location" xml:space="preserve"><value>Konum</value></data>
+  <data name="About_Citizenship" xml:space="preserve"><value>Vatandaşlık</value></data>
+  <data name="About_Languages" xml:space="preserve"><value>Diller</value></data>
 </root>

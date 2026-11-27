@@ -5,18 +5,49 @@
 <PageTitle>Akay Deliorman | .NET Backend Developer</PageTitle>
 
 <section id="profile">
-    <h1>Akay Deliorman</h1>
-    <p>.NET Backend Developer</p>
+    <h1>@SiteContent.Profile.FullName</h1>
+    <p>@SiteContent.Profile.Headline.Text()</p>
+    <p>@SiteContent.Profile.Location.Text()</p>
 </section>
 
 <section id="projects">
     <h2>@L["Section_FeaturedProjects"]</h2>
-    <p>@L["Common_ComingSoon"]</p>
+    @foreach (var project in SiteContent.Projects.Where(p => p.IsFeatured))
+    {
+        <ProjectCard Project="project" />
+    }
+    <p><a href="@ProjectsUrl">@L["Common_AllProjects"]</a></p>
 </section>
 
 <section id="experience">
     <h2>@L["Nav_Experience"]</h2>
-    <p>@L["Common_ComingSoon"]</p>
+    @foreach (var experience in SiteContent.Experiences)
+    {
+        <article>
+            <h3>@experience.Role.Text() – @experience.Company.Text()</h3>
+            <p>@experience.Start.ToString("MMMM yyyy") – @(experience.End?.ToString("MMMM yyyy") ?? L["Common_Present"].Value)</p>
+
+            @foreach (var item in experience.Items)
+            {
+                <div>
+                    @if (item.Title is not null)
+                    {
+                        <h4>@item.Title.Text()</h4>
+                    }
+                    @if (item.Technologies.Count > 0)
+                    {
+                        <p>@string.Join(", ", item.Technologies)</p>
+                    }
+                    <ul>
+                        @foreach (var highlight in item.Highlights)
+                        {
+                            <li>@highlight.Text()</li>
+                        }
+                    </ul>
+                </div>
+            }
+        </article>
+    }
 </section>
 
 <section id="skills">
@@ -76,3 +107,7 @@
         }
     </ul>
 </section>
+
+@code {
+    private string ProjectsUrl => LocalizedRoutes.IsEnglish ? "/en/projects" : "/projeler";
+}

@@ -5,4 +5,8 @@
 <PageTitle>@L["Nav_Projects"] | Akay Deliorman</PageTitle>
 
 <h1>@L["Nav_Projects"]</h1>
-<p>@L["Common_ComingSoon"]</p>
+
+@foreach (var project in SiteContent.Projects)
+{
+    <ProjectCard Project="project" ShowHighlights="true" />
+}

@@ -12,4 +12,10 @@
   <data name="Section_Certificates" xml:space="preserve"><value>Certificates and Training</value></data>
   <data name="Education_Gpa" xml:space="preserve"><value>GPA</value></data>
   <data name="Common_InProgress" xml:space="preserve"><value>ongoing</value></data>
+  <data name="Common_Present" xml:space="preserve"><value>Present</value></data>
+  <data name="Common_AllProjects" xml:space="preserve"><value>All projects →</value></data>
+  <data name="Project_ViewOnGitHub" xml:space="preserve"><value>View on GitHub</value></data>
+  <data name="About_Location" xml:space="preserve"><value>Location</value></data>
+  <data name="About_Citizenship" xml:space="preserve"><value>Citizenship</value></data>
+  <data name="About_Languages" xml:space="preserve"><value>Languages</value></data>
 </root>
