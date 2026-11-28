@@ -6,9 +6,13 @@
     <p>@Project.Summary.Text()</p>
 
     <ul class="tags">
-        @foreach (var technology in Project.Technologies)
+        @foreach (var technology in VisibleTechnologies)
         {
             <li>@technology</li>
+        }
+        @if (HiddenCount > 0)
+        {
+            <li class="more">+@HiddenCount</li>
         }
     </ul>
 
@@ -36,4 +40,14 @@
     // true verilirse maddeler (Highlights) de gösterilir. /projeler sayfası true verir, ana sayfa vermez.
     [Parameter]
     public bool ShowHighlights { get; set; }
+
+    // Kısa kartta (ana sayfa) en fazla bu kadar etiket gösterilir.
+    private const int MaxTagsOnShortCard = 6;
+
+    // Ekranda gösterilecek teknolojiler: uzun kartta hepsi, kısa kartta ilk 6'sı.
+    private IEnumerable<string> VisibleTechnologies =>
+        ShowHighlights ? Project.Technologies : Project.Technologies.Take(MaxTagsOnShortCard);
+
+    // Gizlenen teknoloji sayısı. Hiç gizlenen yoksa 0.
+    private int HiddenCount => Project.Technologies.Count - VisibleTechnologies.Count();
 }

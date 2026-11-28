@@ -19,3 +19,10 @@
 .repo-link:hover {
     background: var(--color-accent-soft);
 }
+
+/* "+6" kutucuğu: diğer etiketlerden soluk, kesik çizgili */
+.more {
+    background: transparent;
+    border: 1px dashed var(--color-border);
+    color: var(--color-muted);
+}
