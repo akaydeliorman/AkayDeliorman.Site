@@ -1,3 +1,126 @@
+/* ===== Renkler ve ölçüler (tek yerden değişir) ===== */
+:root {
+    --color-bg: #f7f8fa;
+    --color-surface: #ffffff;
+    --color-text: #1f2933;
+    --color-muted: #5f6b7a;
+    --color-border: #e3e7ec;
+    --color-accent: #2563eb;
+    --color-accent-soft: #e8efff;
+    --radius: 12px;
+    --max-width: 960px;
+    color-scheme: light dark;
+}
+
+/* Bilgisayar koyu temadaysa aynı değişkenler koyu renk alır */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-bg: #0f1419;
+        --color-surface: #171e26;
+        --color-text: #e6eaef;
+        --color-muted: #9aa5b1;
+        --color-border: #2a333d;
+        --color-accent: #6ea0ff;
+        --color-accent-soft: #1c2a45;
+    }
+}
+
+/* ===== Temel ===== */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4.5rem; /* menüden #bölüm'e atlayınca başlık sabit menünün altında kalmasın */
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--color-text);
+    background: var(--color-bg);
+}
+
+a {
+    color: var(--color-accent);
+}
+
+h1, h2, h3, h4 {
+    line-height: 1.25;
+    margin: 0 0 0.5rem;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.6rem; margin-bottom: 1.25rem; }
+h3 { font-size: 1.15rem; }
+h4 { font-size: 1rem; margin-top: 1rem; }
+
+/* ===== Sayfa bölümleri ===== */
+section {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+    margin-bottom: 0.25rem;
+}
+
+.hero .headline {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.muted {
+    color: var(--color-muted);
+}
+
+/* ===== Ortak parçalar ===== */
+.card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Kartları yan yana diz; ekran daralınca kendiliğinden alt alta geçer */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card-grid .card {
+    margin-bottom: 0;
+}
+
+/* Etiket kutucukları (yetenekler, teknolojiler) */
+.tags {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.tags li {
+    background: var(--color-accent-soft);
+    color: var(--color-accent);
+    border-radius: 999px;
+    padding: 0.15rem 0.75rem;
+    font-size: 0.85rem;
+}
+
+/* ===== Şablondan gelenler ===== */
 h1:focus {
     outline: none;
 }

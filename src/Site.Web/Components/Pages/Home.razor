@@ -4,18 +4,20 @@
 
 <PageTitle>Akay Deliorman | .NET Backend Developer</PageTitle>
 
-<section id="profile">
+<section id="profile" class="hero">
     <h1>@SiteContent.Profile.FullName</h1>
-    <p>@SiteContent.Profile.Headline.Text()</p>
-    <p>@SiteContent.Profile.Location.Text()</p>
+    <p class="headline">@SiteContent.Profile.Headline.Text()</p>
+    <p class="muted">@SiteContent.Profile.Location.Text()</p>
 </section>
 
 <section id="projects">
     <h2>@L["Section_FeaturedProjects"]</h2>
-    @foreach (var project in SiteContent.Projects.Where(p => p.IsFeatured))
-    {
-        <ProjectCard Project="project" />
-    }
+    <div class="card-grid">
+        @foreach (var project in SiteContent.Projects.Where(p => p.IsFeatured))
+        {
+            <ProjectCard Project="project" />
+        }
+    </div>
     <p><a href="@ProjectsUrl">@L["Common_AllProjects"]</a></p>
 </section>
 
@@ -23,9 +25,9 @@
     <h2>@L["Nav_Experience"]</h2>
     @foreach (var experience in SiteContent.Experiences)
     {
-        <article>
+        <article class="card">
             <h3>@experience.Role.Text() – @experience.Company.Text()</h3>
-            <p>@experience.Start.ToString("MMMM yyyy") – @(experience.End?.ToString("MMMM yyyy") ?? L["Common_Present"].Value)</p>
+            <p class="muted">@experience.Start.ToString("MMMM yyyy") – @(experience.End?.ToString("MMMM yyyy") ?? L["Common_Present"].Value)</p>
 
             @foreach (var item in experience.Items)
             {
@@ -36,7 +38,12 @@
                     }
                     @if (item.Technologies.Count > 0)
                     {
-                        <p>@string.Join(", ", item.Technologies)</p>
+                        <ul class="tags">
+                            @foreach (var technology in item.Technologies)
+                            {
+                                <li>@technology</li>
+                            }
+                        </ul>
                     }
                     <ul>
                         @foreach (var highlight in item.Highlights)
@@ -55,7 +62,7 @@
     @foreach (var group in SiteContent.SkillGroups)
     {
         <h3>@group.Name.Text()</h3>
-        <ul>
+        <ul class="tags">
             @foreach (var skill in group.Items)
             {
                 <li>@skill.Text()</li>
