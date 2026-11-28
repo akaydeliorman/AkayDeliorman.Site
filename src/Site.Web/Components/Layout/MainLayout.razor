@@ -2,23 +2,25 @@
 @inject IStringLocalizer<SharedResource> L
 @inject NavigationManager Nav
 
-<header>
-    <a href="@HomeUrl">Akay Deliorman</a>
+<header class="site-header">
+    <div class="site-header-inner">
+        <a class="brand" href="@HomeUrl">Akay Deliorman</a>
 
-    <nav>
-        <a href="@(HomeUrl + "#projects")">@L["Nav_Projects"]</a>
-        <a href="@(HomeUrl + "#experience")">@L["Nav_Experience"]</a>
-        <a href="@(HomeUrl + "#skills")">@L["Nav_Skills"]</a>
-        <NavLink href="@AboutUrl">@L["Nav_About"]</NavLink>
-        <a href="@(HomeUrl + "#contact")">@L["Nav_Contact"]</a>
-        <a href="@AlternateUrl" data-enhance-nav="false">@(LocalizedRoutes.IsEnglish ? "TR" : "EN")</a>
-    </nav>
+        <nav>
+            <a href="@(HomeUrl + "#projects")">@L["Nav_Projects"]</a>
+            <a href="@(HomeUrl + "#experience")">@L["Nav_Experience"]</a>
+            <a href="@(HomeUrl + "#skills")">@L["Nav_Skills"]</a>
+            <NavLink href="@AboutUrl">@L["Nav_About"]</NavLink>
+            <a href="@(HomeUrl + "#contact")">@L["Nav_Contact"]</a>
+            <a class="lang-toggle" href="@AlternateUrl" data-enhance-nav="false">@(LocalizedRoutes.IsEnglish ? "TR" : "EN")</a>
+        </nav>
+    </div>
 </header>
 <main>
     @Body
 </main>
 
-<footer>
+<footer class="site-footer">
     © 2026 Akay Deliorman
 </footer>
 

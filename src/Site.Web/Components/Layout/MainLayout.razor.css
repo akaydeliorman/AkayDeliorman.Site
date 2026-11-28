@@ -1,3 +1,77 @@
+/* Bu dosyadaki kurallar SADECE MainLayout.razor'daki etiketlere uygulanır (scoped CSS). */
+
+.site-header {
+    position: sticky; /* sayfa kayarken menü üstte kalır */
+    top: 0;
+    z-index: 10;
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.site-header-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+}
+
+.brand {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+}
+
+/* ::deep → NavLink ayrı bir bileşen; onun çizdiği <a>'ya da ulaşmak için gerekli */
+nav ::deep a {
+    color: var(--color-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+nav ::deep a:hover,
+nav ::deep a.active {
+    color: var(--color-accent);
+}
+
+.lang-toggle {
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 0 0.5rem;
+    font-weight: 600;
+}
+
+main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1rem 1rem 2rem;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    color: var(--color-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--color-border);
+}
+
+/* Telefonda menü iki satıra iner; yer kaplamasın diye sabit (sticky) olmaktan çıkar */
+@media (max-width: 640px) {
+    .site-header {
+        position: static;
+    }
+}
+
 #blazor-error-ui {
     color-scheme: light only;
     background: lightyellow;
