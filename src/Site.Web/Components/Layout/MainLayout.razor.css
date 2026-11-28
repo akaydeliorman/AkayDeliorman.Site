@@ -1,7 +1,8 @@
 /* Bu dosyadaki kurallar SADECE MainLayout.razor'daki etiketlere uygulanır (scoped CSS). */
 
 .site-header {
-    position: sticky; /* sayfa kayarken menü üstte kalır */
+    position: sticky;
+    /* sayfa kayarken menü üstte kalır */
     top: 0;
     z-index: 10;
     background: var(--color-surface);
@@ -14,7 +15,6 @@
     padding: 0.75rem 1rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     flex-wrap: wrap;
     gap: 0.5rem 1rem;
 }
@@ -24,6 +24,7 @@
     font-size: 1.1rem;
     color: var(--color-text);
     text-decoration: none;
+    margin-right: auto;
 }
 
 nav {
@@ -49,6 +50,8 @@ nav ::deep a.active {
     border-radius: 6px;
     padding: 0 0.5rem;
     font-weight: 600;
+    color: var(--color-text);
+    text-decoration: none;
 }
 
 main {
@@ -65,10 +68,14 @@ main {
     border-top: 1px solid var(--color-border);
 }
 
-/* Telefonda menü iki satıra iner; yer kaplamasın diye sabit (sticky) olmaktan çıkar */
 @media (max-width: 640px) {
     .site-header {
         position: static;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
     }
 }
 
@@ -86,9 +93,9 @@ main {
     z-index: 1000;
 }
 
-    #blazor-error-ui .dismiss {
-        cursor: pointer;
-        position: absolute;
-        right: 0.75rem;
-        top: 0.5rem;
-    }
+#blazor-error-ui .dismiss {
+    cursor: pointer;
+    position: absolute;
+    right: 0.75rem;
+    top: 0.5rem;
+}

@@ -12,8 +12,9 @@
             <a href="@(HomeUrl + "#skills")">@L["Nav_Skills"]</a>
             <NavLink href="@AboutUrl">@L["Nav_About"]</NavLink>
             <a href="@(HomeUrl + "#contact")">@L["Nav_Contact"]</a>
-            <a class="lang-toggle" href="@AlternateUrl" data-enhance-nav="false">@(LocalizedRoutes.IsEnglish ? "TR" : "EN")</a>
         </nav>
+
+        <a class="lang-toggle" href="@AlternateUrl" data-enhance-nav="false">@(LocalizedRoutes.IsEnglish ? "TR" : "EN")</a>
     </div>
 </header>
 <main>
